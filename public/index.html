@@ -18,44 +18,43 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    
   </head>
-
+  
   <body>
-
+    
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
       <div class='nav-right'><b>Write</b> a new tweet!</div>
     </nav>
-
+    
     <header>
       <div>
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
         <h2><b>Tammie</b> Chung</h2>
       </div>
-  </header>
-  
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-
-    <section class="new-tweet">
-      <form action='/tweets' method='POST'>
-        <textarea name="text" placeholder="What are you humming about?"></textarea>
-        <input type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </form>
-    </section>
-
+    </header>
+    
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      
+      <section class="new-tweet">
+        <form action='/tweets' method='POST'>
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      
     </main>
-
-
+    
     <!-- App JS -->
-    <script src="/scripts/composer-char-counter.js"></script>
-
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    
   </body>
 </html>
