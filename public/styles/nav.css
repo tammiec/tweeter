@@ -15,7 +15,7 @@ nav span {
   font-size: 40px;
 }
 
-nav .new-tweet {
+nav .nav-right {
   align-self: center;
   float: right;
 }
