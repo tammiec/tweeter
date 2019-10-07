@@ -3,12 +3,11 @@ header {
   position: relative;
   padding-top: 120px;
   background-color: #ffe6a8;
-  background-image: url('../images/background.png')
-}
-
-header div {
-  margin-top: auto;
-  margin-bottom: auto;
+  background-image: url('../images/background.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 header img {
