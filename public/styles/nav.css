@@ -1,3 +1,16 @@
 nav {
+  position: fixed;
+  display: flex;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  z-index: auto;
+  background-color: #4056A1;
+  color: #ffffff;
+  padding: 1em;
+}
+
+nav span {
   font-family: 'Bungee', cursive;
+  align-self: center
 }
