@@ -1,16 +1,21 @@
 nav {
   position: fixed;
-  display: flex;
   top: 0;
   height: 120px;
   width: 100%;
   z-index: auto;
   background-color: #4056A1;
   color: #ffffff;
-  padding: 1em;
+  padding: 1.5em;
 }
 
 nav span {
   font-family: 'Bungee', cursive;
-  align-self: center
+  align-self: center;
+  font-size: 40px;
+}
+
+nav .new-tweet {
+  align-self: center;
+  float: right;
 }
