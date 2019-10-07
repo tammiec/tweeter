@@ -39,14 +39,14 @@
   
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <p>hello world!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam animi expedita ex, vitae eius labore. Atque hic saepe ut doloremque, incidunt maxime, nesciunt quisquam mollitia ea distinctio recusandae quam voluptates.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis et ipsa esse natus quasi, odio illo, ipsum tenetur praesentium quos tempore, possimus molestias temporibus nostrum quisquam sint. Molestiae, repudiandae dicta?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet harum maxime suscipit possimus alias non eveniet magni expedita adipisci ipsum perferendis vel quo accusamus optio esse modi repudiandae, dolor iste?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet harum maxime suscipit possimus alias non eveniet magni expedita adipisci ipsum perferendis vel quo accusamus optio esse modi repudiandae, dolor iste?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet harum maxime suscipit possimus alias non eveniet magni expedita adipisci ipsum perferendis vel quo accusamus optio esse modi repudiandae, dolor iste?</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet harum maxime suscipit possimus alias non eveniet magni expedita adipisci ipsum perferendis vel quo accusamus optio esse modi repudiandae, dolor iste?</p>
-
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action='/tweets' method='POST'>
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <input type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
     </main>
 
   </body>
