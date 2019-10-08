@@ -1,4 +1,4 @@
-header {
+#page-header {
   height: 400px;
   position: relative;
   padding-top: 120px;
@@ -10,19 +10,19 @@ header {
   flex-direction: column;
 }
 
-header img {
+#page-header img {
   width: 180px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-header h2 {
+#page-header h2 {
   margin: inherit;
   text-align: center;
   font-weight: 300;
 }
 
-header b {
+#page-header b {
   font-weight: 600;
 }
