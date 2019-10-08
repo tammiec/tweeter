@@ -10,6 +10,7 @@
   border: solid;
   border-color: #545149;
   padding: 1em;
+  margin-top: 1em;
   display: flex;
   flex-direction: column;
   width: 100%;
