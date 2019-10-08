@@ -7,15 +7,18 @@
   background-color: #4056A1;
   color: #ffffff;
   padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-content: center;
 }
 
 #navbar span {
   font-family: 'Bungee', cursive;
-  align-self: center;
   font-size: 40px;
 }
 
-#navbar .nav-right {
-  align-self: center;
-  float: right;
+#navbar img {
+  width: 20px;
 }

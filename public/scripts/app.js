@@ -33,9 +33,11 @@ $(document).ready(function() {
         </div>
       <footer>
         <div class='timestamp'>${timestamp}</div>
-        <img src='/images/heart.png'>
-        <img src='/images/retweet.png'>
-        <img src='/images/flag.png'>
+        <div class='tweet-buttons'>
+          <img src='/images/heart.png'>
+          <img src='/images/retweet.png'>
+          <img src='/images/flag.png'>
+        </div>
       </footer>
     </article>
     `;
