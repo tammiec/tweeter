@@ -1,4 +1,4 @@
-$(window).on('load', function() {
+$(document).ready(function() {
   
   $('#new-tweet textarea').on('keyup', function() {
     const charsUsed = $(this).val().length;
