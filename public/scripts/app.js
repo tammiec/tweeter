@@ -49,32 +49,34 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.get('/tweets', function(data) {
       renderTweets(data);
-    })
+    });
   };
 
   loadTweets();
   
-  $(function() {
-    $('#new-tweet form').submit(function(event) {
-      event.preventDefault();
-      
-      if (!$('textarea').val()) {
-        alert('There is nothing to submit!');
-        return;
-      } else if ($('textarea').val().length > 140) {
-        alert('This tweet has exceeded maximum character length!');
-        return;
-      } else {
-        $.ajax({
-          method: 'POST',
-          url: '/tweets',
-          data: $(this).serialize(),
-          success: function () {
-            console.log('Submission was successful.');
-            console.log(this.data);
-          },
-        })
-      }
-    })
-  })
+
+  $('#new-tweet form').submit(function(event) {
+    event.preventDefault();
+    // Input Validation
+    if (!$('textarea').val()) {
+      alert('There is nothing to submit!');
+      return;
+    } else if ($('textarea').val().length > 140) {
+      alert('This tweet has exceeded maximum character length!');
+      return;
+    } else { // Submit tweet if all validation has passed
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: $(this).serialize(),
+        success: function() {
+          console.log('Submission was successful.');
+          console.log(this.data);
+        },
+      })
+        .done(function() {
+          location.reload();
+        });
+    }
+  });
 });
