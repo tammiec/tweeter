@@ -56,24 +56,25 @@ $(document).ready(function() {
   
   $(function() {
     $('#new-tweet form').submit(function(event) {
-      console.log('a new tweet has emerged!');
       event.preventDefault();
       
-      $.ajax({
-        method: 'POST',
-        url: '/tweets',
-        data: $(this).serialize(),
-        success: function () {
-          console.log('Submission was successful.');
-          console.log(this.data);
-        },
-        error: function () {
-          console.log('An error occurred.');
-          console.log(this.data);
-        },
-      })
+      if (!$('textarea').val()) {
+        alert('There is nothing to submit!');
+        return;
+      } else if ($('textarea').val().length > 140) {
+        alert('This tweet has exceeded maximum character length!');
+        return;
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: '/tweets',
+          data: $(this).serialize(),
+          success: function () {
+            console.log('Submission was successful.');
+            console.log(this.data);
+          },
+        })
+      }
     })
-    
   })
-
 });
