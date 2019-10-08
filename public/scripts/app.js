@@ -11,13 +11,9 @@ const createTweetElement = function(obj) {
   const diffDays = Math.round(Math.abs((today - createdAt) / oneDay));
   let timestamp;
 
-  if (diffDays === 1) {
-    timestamp = `${diffDays} day ago`
-  } else {
-    timestamp = `${diffDays} days ago`
-  }
+  (diffDays === 1) ? timestamp = `${diffDays} day ago` : timestamp = `${diffDays} days ago`;
 
-  return tweet = `
+  return `
     <article class='tweet'>
       <header>
         <img class='avatars' src='${obj.user.avatars}'>
@@ -35,24 +31,45 @@ const createTweetElement = function(obj) {
       </footer>
     </article>
   `;
-}
+};
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
+const renderTweets = function(tweets) {
+// loops through tweets
+  $(document).ready(function() {
+    for (let tweet of tweets) {
+      // calls createTweetElement for each tweet
+      let $tweet = createTweetElement(tweet);
+      // takes return value and appends it to the tweets container
+      $('#tweets-container').append($tweet);
+    }
+  });
+};
+
+// Fake data taken from initial-tweets.json
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
     },
-  "content": {
+    "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-  "created_at": 1569951091
-}
+    "created_at": 1569951091
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1570123891
+  }
+];
 
-const $tweet = createTweetElement(tweetData);
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
+renderTweets(data);
