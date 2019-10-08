@@ -71,5 +71,26 @@ const data = [
   }
 ];
 
-
 renderTweets(data);
+
+$(function() {
+  $('#new-tweet form').submit(function(event) {
+    console.log('a new tweet has emerged!');
+    event.preventDefault();
+
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: $(this).serialize(),
+      success: function () {
+        console.log('Submission was successful.');
+        console.log(this.data);
+      },
+      error: function () {
+          console.log('An error occurred.');
+          console.log(this.data);
+      },
+    })
+  })
+
+})
