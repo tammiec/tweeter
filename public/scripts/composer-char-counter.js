@@ -6,7 +6,7 @@ $(document).ready(function() {
     counter.text(140 - charsUsed);
     if (counter.text() < 0) {
       counter.addClass('invalid');
-    } 
+    }
     if (counter.text() >= 0) {
       counter.removeClass('invalid');
     }
