@@ -13,11 +13,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  color: #f4f1ec;
 }
 
 .tweet:hover {
   box-shadow: 10px 10px #bab9b6;
+}
+
+.tweet:hover .handle {
   color: #bab9b6;
 }
 
@@ -35,7 +37,7 @@
   margin-left: 1em;
 }
 
-.tweet-text {
+.content-text {
   float: left;
   box-sizing: border-box;
   border-bottom-style: solid;
@@ -44,10 +46,9 @@
   padding-top: 1em;
   margin-top: 1em;
   margin-bottom: 1em;
-  color: #545149;
 }
 
-.avatar {
+.avatars {
   width: 40px;
   float: left;
   margin-right: 1em;
@@ -55,16 +56,15 @@
 
 .name {
   float: left;
-  color: #545149;
 }
 
-.username {
+.handle {
   float: right;
   font-size: 20px;
+  color: #f4f1ec;
 }
 
 .timestamp {
   float: left;
   font-size: 20px;
-  color: #545149;
 }
