@@ -31,8 +31,12 @@
   margin-top: 10px;
 }
 
-.new-tweet span {
+.counter {
   float: right;
   font-family: 'Bungee', cursive;
   margin-top: 10px;
+}
+
+.invalid {
+  color: red;
 }
