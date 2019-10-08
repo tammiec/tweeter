@@ -5,7 +5,12 @@
  */
 
 $(document).ready(function() {
-  
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   
   const createTweetElement = function(obj) {
     const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
@@ -18,20 +23,20 @@ $(document).ready(function() {
     
     return `
     <article class='tweet'>
-    <header>
-    <img class='avatars' src='${obj.user.avatars}'>
-    <div class='name'>${obj.user.name}</div>
-    <div class='handle'>${obj.user.handle}</div>
-    </header>
-    <div class='content-text'>
-    ${obj.content.text}
-    </div>
-    <footer>
-    <div class='timestamp'>${timestamp}</div>
-    <img src='/images/heart.png'>
-    <img src='/images/retweet.png'>
-    <img src='/images/flag.png'>
-    </footer>
+      <header>
+        <img class='avatars' src='${obj.user.avatars}'>
+        <div class='name'>${obj.user.name}</div>
+        <div class='handle'>${obj.user.handle}</div>
+      </header>
+        <div class='content-text'>
+        ${escape(obj.content.text)}
+        </div>
+      <footer>
+        <div class='timestamp'>${timestamp}</div>
+        <img src='/images/heart.png'>
+        <img src='/images/retweet.png'>
+        <img src='/images/flag.png'>
+      </footer>
     </article>
     `;
   };
@@ -69,10 +74,6 @@ $(document).ready(function() {
         method: 'POST',
         url: '/tweets',
         data: $(this).serialize(),
-        success: function() {
-          console.log('Submission was successful.');
-          console.log(this.data);
-        },
       })
         .done(function() {
           location.reload();
