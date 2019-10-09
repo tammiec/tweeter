@@ -23,14 +23,13 @@
 #navbar .toggle:hover {
   cursor: pointer;
 }
+#navbar .toggle:hover img {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear; 
+}
 
 #navbar .toggle img {
   width: 20px;
-}
-
-#navbar .toggle img:hover {
-  animation: pulse 1s infinite;
-  animation-timing-function: linear; 
 }
 
 @keyframes pulse {
