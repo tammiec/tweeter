@@ -5,6 +5,7 @@
   margin: 1em;
   width: 5%;
   opacity: 0.3;
+  z-index: 999;
 }
 
 #scroll-to-top:hover {
