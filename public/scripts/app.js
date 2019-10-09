@@ -99,12 +99,14 @@ $(document).ready(function() {
       if ($(this).is(':visible')) {
         $('#new-tweet textarea').focus();
       }
+      $('#error-message').hide();
     });
   });
 
   $('#scroll-to-top').hide();
 
   $(window).scroll(function() {
+    $('#error-message').slideUp();
     $('#scroll-to-top').show();
     $('#navbar .toggle').hide();
     if ($(window).scrollTop() === 0) {
