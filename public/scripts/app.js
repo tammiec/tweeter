@@ -59,16 +59,23 @@ $(document).ready(function() {
 
   loadTweets();
   
+  $('#error-message').hide();
+
   $('#new-tweet form').submit(function(event) {
     event.preventDefault();
     // Input Validation
     if (!$('textarea').val()) {
-      alert('There is nothing to submit!');
+      $('#error-message').empty();
+      $('#error-message').append('&#10006; There is nothing to submit...please give us some food for thought! &#10006;');
+      $('#error-message').slideDown();
       return;
     } else if ($('textarea').val().length > 140) {
-      alert('This tweet has exceeded maximum character length!');
+      $('#error-message').empty();
+      $('#error-message').append('&#10006; Whoa...way too much information...keep it within 140 characters please! &#10006;');
+      $('#error-message').slideDown();
       return;
     } else { // Submit tweet if all validation has passed
+      $('#error-message').slideUp();
       $.ajax({
         method: 'POST',
         url: '/tweets',
