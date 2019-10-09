@@ -11,7 +11,7 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
+
   const createTweetElement = function(obj) {
     const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
     const today = Date.now();
@@ -59,6 +59,13 @@ $(document).ready(function() {
     });
   };
 
+  const loadNewTweet = function() {
+    $.get('/tweets', function(data) {
+      let $newTweet = createTweetElement(data[data.length - 1]);
+      $('#tweets-container').prepend($newTweet);
+    });
+  };
+
   loadTweets();
   
 
@@ -77,7 +84,7 @@ $(document).ready(function() {
         url: '/tweets',
         data: $(this).serialize()
       }).done(function() {
-          loadTweets();
+          loadNewTweet();
           $('textarea').val('');
           $('.counter').text('140');
         }).fail(function(error) {
