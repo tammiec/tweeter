@@ -75,11 +75,14 @@ $(document).ready(function() {
       $.ajax({
         method: 'POST',
         url: '/tweets',
-        data: $(this).serialize(),
-      })
-        .done(function() {
+        data: $(this).serialize()
+      }).done(function() {
           loadTweets();
-        });
+          $('textarea').val('');
+          $('.counter').text('140');
+        }).fail(function(error) {
+          console.log('An error has occured', error);
+        })
     }
   });
 
