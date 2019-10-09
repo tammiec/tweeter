@@ -82,4 +82,15 @@ $(document).ready(function() {
         });
     }
   });
+
+  $('#navbar .toggle').click(function(event) {
+    $('html, body').animate({
+      scrollTop: $('#new-tweet').offset().top
+    }, 800)
+  })
+
+  // $('#navbar .toggle').on('click', function() {
+  //   $(window).scrollTop(0);
+  // })
+
 });
