@@ -4,71 +4,62 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
+const createTweetElement = function(obj) {
+  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  const today = Date.now();
+  const createdAt = new Date(obj.created_at);
+  const diffDays = Math.round(Math.abs((today - createdAt) / oneDay));
+  let timestamp;
+  
+  (diffDays === 1) ? timestamp = `${diffDays} day ago` : timestamp = `${diffDays} days ago`;
+  
+  return `
+  <article class='tweet'>
+    <header>
+      <img class='avatars' src='${obj.user.avatars}'>
+      <div class='name'>${obj.user.name}</div>
+      <div class='handle'>${obj.user.handle}</div>
+    </header>
+      <div class='content-text'>
+      ${escape(obj.content.text)}
+      </div>
+    <footer>
+      <div class='timestamp'>${timestamp}</div>
+      <div class='tweet-buttons'>
+        <img src='/images/heart.png'>
+        <img src='/images/retweet.png'>
+        <img src='/images/flag.png'>
+      </div>
+    </footer>
+  </article>
+  `;
+};
+
+const renderTweets = function(tweets) {
+  let renderedTweetsArray = [];
+  for (let tweet of tweets) {
+    renderedTweetsArray.unshift(createTweetElement(tweet));
+  }
+  $('#tweets-container').append(renderedTweetsArray.join(''));
+};
+
+const loadTweets = function() {
+  $.get('/tweets', function(data) {
+    renderTweets(data);
+  });
+};
+
 $(document).ready(function() {
-
-  const escape =  function(str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-
-  const createTweetElement = function(obj) {
-    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-    const today = Date.now();
-    const createdAt = new Date(obj.created_at);
-    const diffDays = Math.round(Math.abs((today - createdAt) / oneDay));
-    let timestamp;
-    
-    (diffDays === 1) ? timestamp = `${diffDays} day ago` : timestamp = `${diffDays} days ago`;
-    
-    return `
-    <article class='tweet'>
-      <header>
-        <img class='avatars' src='${obj.user.avatars}'>
-        <div class='name'>${obj.user.name}</div>
-        <div class='handle'>${obj.user.handle}</div>
-      </header>
-        <div class='content-text'>
-        ${escape(obj.content.text)}
-        </div>
-      <footer>
-        <div class='timestamp'>${timestamp}</div>
-        <div class='tweet-buttons'>
-          <img src='/images/heart.png'>
-          <img src='/images/retweet.png'>
-          <img src='/images/flag.png'>
-        </div>
-      </footer>
-    </article>
-    `;
-  };
-  
-  const renderTweets = function(tweets) {
-    // loops through tweets
-    for (let tweet of tweets) {
-      // calls createTweetElement for each tweet
-      let $tweet = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
-      $('#tweets-container').prepend($tweet);
-    }
-  };
-  
-  const loadTweets = function() {
-    $.get('/tweets', function(data) {
-      renderTweets(data);
-    });
-  };
-
-  const loadNewTweet = function() {
-    $.get('/tweets', function(data) {
-      let $newTweet = createTweetElement(data[data.length - 1]);
-      $('#tweets-container').prepend($newTweet);
-    });
-  };
 
   loadTweets();
   
-
   $('#new-tweet form').submit(function(event) {
     event.preventDefault();
     // Input Validation
@@ -84,7 +75,8 @@ $(document).ready(function() {
         url: '/tweets',
         data: $(this).serialize()
       }).done(function() {
-          loadNewTweet();
+          $('#tweets-container').empty();
+          loadTweets();
           $('textarea').val('');
           $('.counter').text('140');
         }).fail(function(error) {
