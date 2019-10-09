@@ -62,24 +62,27 @@ $(document).ready(function() {
   $('#error-message').hide();
 
   $('#new-tweet form').submit(function(event) {
+    let self = this;
     event.preventDefault();
-    // Input Validation
-    if (!$('textarea').val()) {
-      $('#error-message').empty();
-      $('#error-message').append('&#10006; There is nothing to submit...please give us some food for thought! &#10006;');
-      $('#error-message').slideDown();
-      return;
-    } else if ($('textarea').val().length > 140) {
-      $('#error-message').empty();
-      $('#error-message').append('&#10006; Whoa...way too much information...keep it within 140 characters please! &#10006;');
-      $('#error-message').slideDown();
-      return;
-    } else { // Submit tweet if all validation has passed
-      $('#error-message').slideUp();
+    $.when($('#error-message').slideUp()).then(function() {
+      const input = $('textarea').val();
+      let errorMessage = '';
+      // Input Validation
+      if (input.length === 0 || input.length > 140) {
+        errorMessage = '&#10006; There is nothing to submit...please give us some food for thought! &#10006;'
+        if (input.length > 140) {
+          errorMessage = '&#10006; Whoa...way too much information...keep it within 140 characters please! &#10006;'
+        }
+        $('#error-message').empty();
+        $('#error-message').append(errorMessage);
+        $('#error-message').slideDown();
+        return;
+      }
+       // Submit tweet if all validation has passed
       $.ajax({
         method: 'POST',
         url: '/tweets',
-        data: $(this).serialize()
+        data: $(self).serialize()
       }).done(function() {
         $('#tweets-container').empty();
         loadTweets();
@@ -88,7 +91,7 @@ $(document).ready(function() {
       }).fail(function(error) {
         console.log('An error has occured', error);
       });
-    }
+    })
   });
 
   $('#navbar .toggle').click(function() {
