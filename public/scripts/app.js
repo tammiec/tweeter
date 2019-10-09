@@ -85,7 +85,11 @@ $(document).ready(function() {
   });
 
   $('#navbar .toggle').click(function(event) {
-    $('#new-tweet').slideToggle();
+    $('#new-tweet').slideToggle('slow', function() {
+      if ($(this).is(':visible')) {
+        $('#new-tweet textarea').focus();
+      }
+    });
   });
 
 });
