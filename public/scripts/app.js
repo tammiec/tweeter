@@ -84,12 +84,31 @@ $(document).ready(function() {
     }
   });
 
-  $('#navbar .toggle').click(function(event) {
+  $('#navbar .toggle').click(function() {
     $('#new-tweet').slideToggle('slow', function() {
       if ($(this).is(':visible')) {
         $('#new-tweet textarea').focus();
       }
     });
   });
+
+  $('#scroll-to-top').hide();
+
+  $(window).scroll(function() {
+    $('#scroll-to-top').show();
+    $('#navbar .toggle').hide();
+    if ($(window).scrollTop() === 0) {
+      $('#scroll-to-top').hide();
+      $('#navbar .toggle').show();
+    }
+  })
+
+  $('#scroll-to-top').click(function() {
+    window.scrollTo(0, 0);
+      if ($('#new-tweet').is(':hidden')) {
+        $('#new-tweet').slideDown();
+      }
+    $('#new-tweet textarea').focus();
+  })
 
 });
