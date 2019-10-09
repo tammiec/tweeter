@@ -78,7 +78,7 @@ $(document).ready(function() {
         data: $(this).serialize(),
       })
         .done(function() {
-          location.reload();
+          loadTweets();
         });
     }
   });
