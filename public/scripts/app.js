@@ -10,7 +10,6 @@ const escape =  function(str) {
   return div.innerHTML;
 };
 
-
 const createTweetElement = function(obj) {
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
   const today = Date.now();
@@ -75,24 +74,18 @@ $(document).ready(function() {
         url: '/tweets',
         data: $(this).serialize()
       }).done(function() {
-          $('#tweets-container').empty();
-          loadTweets();
-          $('textarea').val('');
-          $('.counter').text('140');
-        }).fail(function(error) {
-          console.log('An error has occured', error);
-        })
+        $('#tweets-container').empty();
+        loadTweets();
+        $('textarea').val('');
+        $('.counter').text('140');
+      }).fail(function(error) {
+        console.log('An error has occured', error);
+      });
     }
   });
 
   $('#navbar .toggle').click(function(event) {
-    $('html, body').animate({
-      scrollTop: $('#new-tweet').offset().top
-    }, 800)
-  })
-
-  // $('#navbar .toggle').on('click', function() {
-  //   $(window).scrollTop(0);
-  // })
+    $('#new-tweet').slideToggle();
+  });
 
 });
