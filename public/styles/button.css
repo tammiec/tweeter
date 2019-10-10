@@ -4,6 +4,7 @@
   right: 0;
   margin: 1em;
   width: 8%;
+  max-width: 60px;
   opacity: 0.3;
   z-index: 999;
 }
