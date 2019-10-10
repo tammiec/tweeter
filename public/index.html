@@ -33,10 +33,10 @@
     <!-- Top nav bar (fixed) -->
     <nav id='navbar'>
       <span>tweeter</span>
-      <div class='toggle'>
+      <div class='toggle' title='Write a new tweet'>
         <b>Write</b> a new tweet!
         <br>
-        <img src='/images/down.png'>
+        <img src='/images/down.png' alt='Down arrow symbol'>
       </div>
     </nav>
     
@@ -46,7 +46,7 @@
       
       <header id='page-header'>
         <div>
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/profile-hex.png" alt='White hexagon with linear avatar inside'> 
         </div>
         <br>
         <div>
@@ -59,14 +59,14 @@
           <form action='/tweets' method='POST'>
             <p id='error-message'></p>
             <textarea name="text" placeholder="What are you humming about?"></textarea>
-            <input type="submit" value="Tweet">
+            <input type="submit" value="Tweet" title='Submit Tweet'>
             <span class="counter">140</span>
           </div>
         </div>
         <div id='tweets-container'></div>
       </section>
 
-      <img id='scroll-to-top' src='/images/up.png'>
+      <img id='scroll-to-top' src='/images/up.png' alt='Up arrow symbol' title='Scroll to top'>
       
     </main>
     

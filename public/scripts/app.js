@@ -22,7 +22,7 @@ const createTweetElement = function(obj) {
   return `
   <article class='tweet'>
     <header>
-      <img class='avatars' src='${obj.user.avatars}'>
+      <img class='avatars' src='${obj.user.avatars}' alt='User avatar'>
       <div class='name'>${obj.user.name}</div>
       <div class='handle'>${obj.user.handle}</div>
     </header>
@@ -32,9 +32,9 @@ const createTweetElement = function(obj) {
     <footer>
       <div class='timestamp'>${timestamp}</div>
       <div class='tweet-buttons'>
-        <img src='/images/heart.png'>
-        <img src='/images/retweet.png'>
-        <img src='/images/flag.png'>
+        <img src='/images/heart.png' alt='Heart symbol' title='Like'>
+        <img src='/images/retweet.png' alt='Retween symbol' title='Retweet'>
+        <img src='/images/flag.png' alt='Flag symbol' title='Flag'>
       </div>
     </footer>
   </article>
@@ -71,7 +71,7 @@ $(document).ready(function() {
       if (input.length === 0 || input.length > 140) {
         errorMessage = '&#10006; There is nothing to submit...please give us some food for thought! &#10006;'
         if (input.length > 140) {
-          errorMessage = '&#10006; Whoa...way too much information...keep it within 140 characters please! &#10006;'
+          errorMessage = '&#10006; Whoa...way too much information...keep it under 140 characters please! &#10006;'
         }
         $('#error-message').empty();
         $('#error-message').append(errorMessage);
