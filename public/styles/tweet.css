@@ -5,6 +5,12 @@
   position: relative;
 }
 
+@media (min-width: 1024px) {
+  #tweets-container {
+    min-width: 200px;
+  }
+}
+
 .tweet {
   box-sizing: border-box;
   border: solid;

@@ -5,6 +5,13 @@
   position: relative;
 }
 
+@media (min-width: 1024px) {
+  #new-tweet {
+    min-width: 200px;
+    padding-top: 0;
+  }
+}
+
 #new-tweet textarea {
   width: 100%;
   height: auto;

@@ -26,8 +26,30 @@ body {
  */
 
  main {
-   width: 90%;
-   margin-right: auto;
-   margin-left: auto;
+   width: 100%;
    background-color: inherit;
+   display: flex;
+   flex-direction: column;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ 
+ main section {
+   align-self: center;
+   width: 90%;
+ }
+
+ @media (min-width: 1024px) {
+   main {
+     margin-top: 140px;
+     width: 90%;
+     flex-direction: row;
+     justify-content: space-between;
+   }
+
+   main section {
+    align-self: center;
+    width: 100%;
+    margin-left: 1em;
+  }
  }
