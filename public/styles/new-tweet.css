@@ -36,16 +36,6 @@
   margin-top: 10px;
 }
 
-.counter {
-  float: right;
-  font-family: 'Bungee', cursive;
-  margin-top: 10px;
-}
-
-.invalid {
-  color: darkred;
-}
-
 #error-message {
   text-align: center;
   border: solid  darkred;
@@ -54,4 +44,14 @@
   padding: 0.5em;
   color:  darkred;
   font-size: 20px;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee', cursive;
+  margin-top: 10px;
+}
+
+.invalid {
+  color: darkred;
 }

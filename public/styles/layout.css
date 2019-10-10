@@ -21,35 +21,31 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main {
+  width: 100%;
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
 
- main {
-   width: 100%;
-   background-color: inherit;
-   display: flex;
-   flex-direction: column;
-   margin-left: auto;
-   margin-right: auto;
- }
- 
- main section {
-   align-self: center;
-   width: 90%;
- }
+main section {
+  align-self: center;
+  width: 90%;
+}
 
- @media (min-width: 1024px) {
-   main {
-     margin-top: 140px;
-     width: 90%;
-     flex-direction: row;
-     justify-content: space-between;
-   }
-
-   main section {
-    align-self: center;
-    width: 100%;
-    margin-left: 1em;
+@media (min-width: 1024px) {
+  main {
+    margin-top: 140px;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
   }
- }
+
+  main section {
+  align-self: center;
+  width: 100%;
+  margin-left: 1em;
+  }
+}
