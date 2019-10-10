@@ -59,6 +59,7 @@ $(document).ready(function() {
 
   loadTweets();
   
+  $('#new-tweet').hide();
   $('#error-message').hide();
 
   $('#new-tweet form').submit(function(event) {
