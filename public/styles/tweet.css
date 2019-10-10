@@ -17,11 +17,11 @@
 }
 
 .tweet:hover {
-  box-shadow: 10px 10px #8f6b87;
+  box-shadow: 10px 10px #b097ab;
 }
 
 .tweet:hover .handle {
-  color: #8f6b87;
+  color: #b097ab;
 }
 
 .tweet header {
