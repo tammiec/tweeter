@@ -50,21 +50,20 @@
       </div>
     </header>
     <!-- Page-specific (main) content here -->
-
+    
     <main class="container">
-
       
-      <section id="new-tweet">
-        <form action='/tweets' method='POST'>
-          <p id='error-message'></p>
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter">140</span>
-        </form>
-      </section>
-
-      <section id='tweets-container'>
-
+      
+      <section>
+        <div id="new-tweet">
+          <form action='/tweets' method='POST'>
+            <p id='error-message'></p>
+            <textarea name="text" placeholder="What are you humming about?"></textarea>
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </div>
+        </div>
+        <div id='tweets-container'></div>
       </section>
 
       <img id='scroll-to-top' src='/images/up.png'>
