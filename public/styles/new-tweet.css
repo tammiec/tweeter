@@ -24,6 +24,7 @@
   border-bottom-style: solid;
   border-bottom-color: #524c64;
   resize: none;
+  outline-color: #dba530;
 }
 
 #new-tweet input {
@@ -34,6 +35,7 @@
   background-color: #524c64;
   border: none;
   margin-top: 10px;
+  outline-color: #dba530;
 }
 
 #error-message {
