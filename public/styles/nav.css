@@ -21,6 +21,11 @@
   font-size: 40px;
 }
 
+@media (max-width: 420px) {
+  #navbar span {
+    font-size: 30px;
+  }
+}
 
 #navbar .toggle:hover {
   cursor: pointer;
@@ -40,10 +45,4 @@
   0% { transform: scale(1); }
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
-}
-
-@media (max-width: 420px) {
-  #navbar span {
-    font-size: 30px;
-  }
 }
