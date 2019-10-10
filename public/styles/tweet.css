@@ -8,7 +8,7 @@
 .tweet {
   box-sizing: border-box;
   border: solid;
-  border-color: #545149;
+  border-color: #524c64;
   padding: 1em;
   margin-top: 1em;
   display: flex;
@@ -17,11 +17,11 @@
 }
 
 .tweet:hover {
-  box-shadow: 10px 10px #bab9b6;
+  box-shadow: 10px 10px #8f6b87;
 }
 
 .tweet:hover .handle {
-  color: #bab9b6;
+  color: #8f6b87;
 }
 
 .tweet header {
@@ -45,7 +45,7 @@
 .content-text {
   box-sizing: border-box;
   border-bottom-style: solid;
-  border-bottom-color: #545149;
+  border-bottom-color: #524c64;
   padding-bottom: 1em;
   padding-top: 1em;
   margin-top: 0.5em;
@@ -64,7 +64,7 @@
 
 .handle {
   font-size: 20px;
-  color: #f4f1ec;
+  color: #ded4d9;
   margin-left: auto;
 }
 

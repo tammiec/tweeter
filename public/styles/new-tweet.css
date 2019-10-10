@@ -9,11 +9,12 @@
   width: 100%;
   height: auto;
   font-weight: 600;
-  background-color: #f4f1ec;
+  background-color: #ded4d9;
+  color: #524c64;
   box-sizing: border-box;
   border: none;
   border-bottom-style: solid;
-  border-bottom-color: #545149;
+  border-bottom-color: #524c64;
   resize: none;
 }
 
@@ -22,7 +23,7 @@
   float: left;
   font-family: 'Bungee', cursive;
   color: #ffffff;
-  background-color: #4056A1;
+  background-color: #524c64;
   border: none;
   margin-top: 10px;
 }
@@ -34,14 +35,14 @@
 }
 
 .invalid {
-  color: red;
+  color: darkred;
 }
 
 #error-message {
   text-align: center;
-  border: solid red;
+  border: solid  darkred;
   margin-bottom: 1.5em;
   padding: 0.5em;
-  color: red;
+  color:  darkred;
   font-size: 20px;
 }

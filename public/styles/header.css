@@ -2,7 +2,8 @@
   height: 400px;
   position: relative;
   padding-top: 120px;
-  background-color: #ffe6a8;
+  background-color: #8f6b87;
+  color: white;
   background-image: url('../images/background.png');
   display: flex;
   justify-content: center;
